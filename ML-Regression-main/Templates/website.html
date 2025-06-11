@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Home Value Prediction
+    </title>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Predict Median Value of Owner-Occupied Homes</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="INDUS">Proportion of Non-retail Business Acres per Town (INDUS):</label>
+                <input type="text" id="INDUS" name="INDUS" required>
+            </div>
+
+            <div class="form-group">
+
+                <label for="RM">Average Number of Rooms per Dwelling (RM):</label>
+                <input type="text" id="RM" name="RM" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="TAX">Full-value Property-tax Rate per $10,000 (TAX):</label>
+                <input type="text" id="TAX" name="TAX" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="PTRATIO">Pupil-Teacher Ratio by Town (PTRATIO):</label>
+                <input type="text" id="PTRATIO" name="PTRATIO" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="LSTAT">% Lower Status of the Population (LSTAT):</label>
+                <input type="text" id="LSTAT" name="LSTAT" required>
+
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+
+            {% if prediction_text %}
+                <h2>{{ prediction_text }}</h2>
+            {% endif %}
+
+
+            
+        </form>
+
+    </div>
+</body>
